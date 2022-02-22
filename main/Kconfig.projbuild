@@ -1,0 +1,47 @@
+menu "ESP32 DevKit Flasher"
+
+    config BTN_GPIO
+        int "Boot button GPIO number"
+        range 0 35
+        default 0
+
+    config LED_GPIO
+        int "Blue LED GPIO number"
+        range 0 35
+        default 2
+
+    menu "Serial to flash"
+
+        choice FLASH_UART
+            prompt "UART peripheral number"
+            default SERIAL_UART_1
+
+            config SERIAL_UART_1
+                bool "UART 1 (default)"
+            config SERIAL_UART_2
+                bool "UART 2"
+        endchoice
+
+        config FLASH_RXD
+            int "RXD GPIO"
+            range 1 35
+            default 5
+
+        config FLASH_TXD
+            int "TXD GPIO"
+            range 1 35
+            default 4
+
+        config FLASH_RESET
+            int "Reset GPIO"
+            range 1 35
+            default 25
+
+        config FLASH_IO0
+            int "IO0 GPIO"
+            range 1 35
+            default 26
+
+    endmenu
+
+endmenu

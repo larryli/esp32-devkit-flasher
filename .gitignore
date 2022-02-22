@@ -1,0 +1,6 @@
+build/
+trace/
+*.log
+sdkconfig
+sdkconfig.old
+version.txt
